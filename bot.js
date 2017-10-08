@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const username = "ViMaSter";
-const discriminator = "7619";
-const musicTextChannel = "317309845130838017";
+const username = "Rette";
+const discriminator = "7921";
+const musicTextChannel = "340113556601044993";
 
 client.on('ready', () => {
   console.log('Discord library is ready!');
