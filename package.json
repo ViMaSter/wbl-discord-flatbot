@@ -1,0 +1,10 @@
+{
+  "name": "flatbot",
+  "version": "0.0.1",
+  "dependencies": {
+    "discord.js": "^11.2.1"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}
