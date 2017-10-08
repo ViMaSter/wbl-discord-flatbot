@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const username = "Rette";
-const discriminator = "7921";
-const musicChannel = "340113556601044993";
+const username = "ViMaSter";
+const discriminator = "7619";
+const musicTextChannel = "317309845130838017";
 
 client.on('ready', () => {
   console.log('Discord library is ready!');
@@ -30,7 +30,21 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 		return;
 	}
 
-	client.channels.find("id", musicChannel).send('!play https://www.youtube.com/watch?v=UhLJ0sFBS40');
+	newMember.voiceChannel.join()
+  		.then(connection => {
+  			console.log("waiting after join...");
+  			var waitTill = new Date(new Date().getTime() + 1000);
+			while(waitTill > new Date()){}
+  			console.log("sending command...");
+  			client.channels.find("id", musicTextChannel).send('!play https://www.youtube.com/watch?v=UhLJ0sFBS40')
+  			.then(connection => {
+	  			var waitTill = new Date(new Date().getTime() + 2000);
+				while(waitTill > new Date()){}
+	  			console.log("leaving...");
+				newMember.voiceChannel.leave()
+  			});
+		})
+ 		.catch(console.error);
 });
 
 client.login(process.env.DISCORD_WBL_BOT_TOKEN);
